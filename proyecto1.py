@@ -9,7 +9,7 @@ def aleatorio():
 
 def consultar():
   """Sirve para comsultar y validar si el usuario quiere seguir jugando"""
-  respuesta=input("¿Quieres seguir jugando? Responde sí o no: ")
+  respuesta=input("¿Deseas lanzar los dados? Responde sí o no: ")
   respuesta=respuesta.strip()
   while respuesta=="si" or respuesta=="sí" or respuesta=="Si" or respuesta=="Sí":
       return aleatorio()
@@ -21,7 +21,7 @@ def consultar():
       print("La respuesta es incorrecta,vuelve a intentarlo")
       return consultar()
 print("Bienvenido al juego de dados:")
-aleatorio()
+consultar()
 
 
 
