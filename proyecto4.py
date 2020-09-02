@@ -45,8 +45,6 @@ class Horario(Base):
     __tablename__ = 'horario'
     
     id = Column(Integer, Sequence('author_id_seq'), primary_key=True)
-    # Weekday saved as ISO format
-    # https://docs.python.org/3/library/datetime.html#datetime.date.isoweekday
     dia_de_semana = Column(Integer)
     hora_entrada = Column(Time)
     hora_fin = Column(Time)
@@ -54,8 +52,6 @@ class Horario(Base):
     profesor_id = Column(Integer, ForeignKey('profesor.id'))
     curso = relationship('Curso', back_populates='horario_curso')
     profesor = relationship('Profesor', back_populates='horario_profesor')
-    def __repr__(self):
-        return "{} {}".format(self.nombre)
 class CursoReporte(object):
     def __init__(self, archivo):
         self.archivo = archivo
